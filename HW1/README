@@ -1,0 +1,36 @@
+        Condition
+
+Write a function that receives an expression containing parentheses and checks that they are correctly organized. The definition of a regular expression is as follows:
+
+1. Any expression that does not contain any parentheses is correct (in particular, the empty expression is also correct).
+2. If X is a regular expression, then (X) is also a regular expression.
+3. If X is a regular expression, then [X] is also a regular expression.
+4. If X is a regular expression, then {X} is a regular expression.
+5. If X and Y are regular expressions, then XY is also a regular expression.
+6. There are no other correct expressions.
+
+For example, the following expressions are correct:
+    abc
+    (abc)
+    (((abc)))
+    ([abc])
+    ((abc){abc}(((def)))def)
+    ()
+    ((()))
+    {}[](){}[]()
+    (()()()()()()())
+
+The following are NOT correct:
+    (abc
+    (((abc))
+    abc)
+    (abc))
+    (
+    )
+    {abc]
+    (abcdef[)]
+
+The function should have the following prototype:
+bool isCorrect(const char* expression)
+
+In the task you can use std::stack from STL.
